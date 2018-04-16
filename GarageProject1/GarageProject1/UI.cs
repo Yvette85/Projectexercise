@@ -19,12 +19,20 @@ namespace GarageProject1
         }
        public void MainMenu()
        {
-            GarageHandler g = new GarageHandler();
-
+            Console.WriteLine("Enter the size of the garage");
+            int size = InputAsInteger(); //To get an input as a Integer
+            while (size == -1)
+            {
+                Console.WriteLine("Input An Invalid Value");
+                size = InputAsInteger();
+            }
+            GarageHandler g = new GarageHandler(size);
 
             bool keepRunning = true;
             while (keepRunning)
             {
+               
+                
 
                 Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
                     + "\n1. List all parked vehicles"
@@ -107,7 +115,7 @@ namespace GarageProject1
                             }
 
                             vehicle = new Car(reg, gearLever, isAutomatic, color, numberOfSeats, typeOfFuel);
-                            g.ParkVehicle(vehicle);
+                            g.ParkVehicle(vehicle);  
 
                         }
                         else if (type == "2")
