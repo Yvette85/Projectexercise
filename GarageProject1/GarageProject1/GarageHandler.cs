@@ -25,19 +25,31 @@ namespace GarageProject1
 
         public void ListParkedVehicles()
         {
+            bool isEmpty = true; // To check if the garage is empty
             foreach (Vehicle v in newvehicles)
             {
                 if (v != null)
                     v.Print();
+                isEmpty = false; // The garage is not empty  
+            }
+            if (isEmpty == true)
+            {
+                Console.WriteLine("The garage is Empty");
             }
         }
 
         public void ListParkedVehiclesType()
         {
+            bool isEmpty = true; // To check if the garage is empty
             foreach (Vehicle v in newvehicles)
             {
 
                 Console.WriteLine(v.GetType().Name);
+                isEmpty = false; // The garage is not empty  
+            }
+            if (isEmpty == true)
+            {
+                Console.WriteLine("The garage is Empty");
             }
         }
 
@@ -58,10 +70,23 @@ namespace GarageProject1
 
         public void FindVehicles(string color)
         {
+            int countofCar = 0;
+            int countofBus = 0;
+            int countofMotorcycle = 0;
             foreach (Vehicle v in newvehicles.Where(x => x.Color == color))
             {
+                if(v.GetType().Name == "Car")
+
+                countofCar++;
+                else if (v.GetType().Name == "Bus")
+                    countofBus++;
+                else if (v.GetType().Name == "Motorcycle")
+                    countofMotorcycle++;
                 v.Print();
             }
+            Console.WriteLine("We have " + countofCar + " Cars which are " + color);
+            Console.WriteLine("We have " + countofBus + " Bus which are " + color);
+            Console.WriteLine("We have " + countofMotorcycle + " Motorcycles which are " + color);
         }
 
         public void CreateGarage(int size)

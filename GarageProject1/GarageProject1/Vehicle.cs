@@ -26,7 +26,7 @@ namespace GarageProject1
         }
         public  virtual void Print()
         {
-            Console.Write($"RegNumber: {RegNumber}, GearLever: {GearLever}, IsAutomatic:{IsAutomatic}, Color: {Color} ");
+            Console.Write($" {GetType().Name}, RegNumber: {RegNumber}, GearLever: {GearLever}, IsAutomatic:{IsAutomatic}, Color: {Color} ");
         }
 
         public string RegNumber { get; set; }

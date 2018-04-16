@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace GarageProject1
 {
-    public class Garage<T> : IEnumerable<T> where T : Vehicle
+    public class Garage<T> : IEnumerable<T> where T : Vehicle //collection of vehicles
     {
-        private T[] vehicles;
+        private T[] vehicles; //list of vehicles
 
         public int MaxCapacity { get; set; }
         public int Count { get; set; }
@@ -30,7 +30,7 @@ namespace GarageProject1
            
             else
             {
-                for (int i = 0; i < Count; i++)
+                for (int i = 0; i < Count; i++)   
                 {
                     if (vehicles[i] == null)
                     {

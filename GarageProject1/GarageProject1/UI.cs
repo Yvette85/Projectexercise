@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace GarageProject1
 {
-    public class UI
+   public class UI
     {
-
-        GarageHandler g = new GarageHandler();
-
-        public void MainMenu()
+        public int InputAsInteger()
         {
-            bool keepRunning = true;
+            string str = Console.ReadLine();
+            bool  isInteger = Int32.TryParse(str, out int result);
+            if (isInteger)
+                return result;
+            else
+                return -1;
+        }
+       public void MainMenu()
+       {
+            GarageHandler g = new GarageHandler();
 
+
+            bool keepRunning = true;
             while (keepRunning)
             {
 
@@ -52,43 +60,99 @@ namespace GarageProject1
                         break;
                     case '3':
                         Vehicle vehicle = new Vehicle();
-                        Console.WriteLine("Choose The Type");
+                        Console.WriteLine("Choose The Type Of The Vehicle: Car --> 1, Bus --> 2, Motortcycle --> 3");
                         string type = Console.ReadLine();
                         if (type == "1")
                         {
-
+                            // Input the registration number as a string
                             Console.WriteLine("Enter the registration number");
                             string reg = Console.ReadLine();
+
+
                             Console.WriteLine("Enter gear lever");
-                            string gearLever = Console.ReadLine();
+                            int gearLever = InputAsInteger(); //To get an input as a Integer
+                            while(gearLever == -1)
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                gearLever = InputAsInteger();
+                            }
+
                             Console.WriteLine("Is It Automatic Y/N");
                             string isAutomatic = Console.ReadLine();
+                            while (isAutomatic !="y" && isAutomatic != "n")
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                isAutomatic = Console.ReadLine();
+                            }
+
                             Console.WriteLine("Enter the color");
                             string color = Console.ReadLine();
 
-                            Console.WriteLine("Enter Number Of Seats");
-                            string numberOfSeats = Console.ReadLine();
-                            Console.WriteLine("Enter the Type Of Fuel");
+                            Console.WriteLine("Enter number of seats");
+                            int numberOfSeats = InputAsInteger(); //To get an input as a Integer
+                            while (numberOfSeats == -1)
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                numberOfSeats = InputAsInteger();
+                            }
+
+
+
+                            Console.WriteLine("Enter the Type Of Fuel d --> Disel, b --> Bensin");
                             string typeOfFuel = Console.ReadLine();
-                            vehicle = new Car(reg, Int32.Parse(gearLever), isAutomatic, color, Int32.Parse(numberOfSeats), typeOfFuel);
+                            while (typeOfFuel != "d" && typeOfFuel != "b")
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                typeOfFuel = Console.ReadLine();
+                            }
+
+                            vehicle = new Car(reg, gearLever, isAutomatic, color, numberOfSeats, typeOfFuel);
+                            g.ParkVehicle(vehicle);
 
                         }
                         else if (type == "2")
                         {
                             Console.WriteLine("Enter the registration number");
                             string reg = Console.ReadLine();
+
                             Console.WriteLine("Enter gear lever");
-                            string gearLever = Console.ReadLine();
+                            int gearLever = InputAsInteger(); //To get an input as a Integer
+                            while (gearLever == -1)
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                gearLever = InputAsInteger();
+                            }
+
+
                             Console.WriteLine("Is It Automatic Y/N");
                             string isAutomatic = Console.ReadLine();
+                            while (isAutomatic != "y" && isAutomatic != "n")
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                isAutomatic = Console.ReadLine();
+                            }
+
                             Console.WriteLine("Enter the color");
                             string color = Console.ReadLine();
 
-                            Console.WriteLine("Enter Bus Length");
-                            double busLength = double.Parse(Console.ReadLine());
-                            Console.WriteLine("Enter number of wheels");
-                            int numberOfWheels = Int32.Parse(Console.ReadLine());
-                            vehicle = new Bus(reg, Int32.Parse(gearLever), isAutomatic, color, busLength, numberOfWheels);
+                            Console.WriteLine("Enter bus Length");
+                            int busLength = InputAsInteger(); //To get an input as a Integer
+                            while (busLength == -1)
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                busLength = InputAsInteger();
+                            }
+
+                            Console.WriteLine("Enter number Of Wheels");
+                            int numberOfWheels = InputAsInteger(); //To get an input as a Integer
+                            while (numberOfWheels == -1)
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                numberOfWheels = InputAsInteger();
+                            }
+
+                            vehicle = new Bus(reg, gearLever, isAutomatic, color, busLength, numberOfWheels);
+                            g.ParkVehicle(vehicle);
 
 
                         }
@@ -96,37 +160,69 @@ namespace GarageProject1
                         {
                             Console.WriteLine("Enter the registration number");
                             string reg = Console.ReadLine();
+
+
                             Console.WriteLine("Enter gear lever");
-                            string gearLever = Console.ReadLine();
+                            int gearLever = InputAsInteger(); //To get an input as a Integer
+                            while (gearLever == -1)
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                gearLever = InputAsInteger();
+                            }
+
+
                             Console.WriteLine("Is It Automatic Y/N");
                             string isAutomatic = Console.ReadLine();
+                            while (isAutomatic != "y" && isAutomatic != "n")
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                isAutomatic = Console.ReadLine();
+                            }
+
+
+
                             Console.WriteLine("Enter the color");
                             string color = Console.ReadLine();
 
-                            Console.WriteLine("Enter number of wheels");
-                            int numberOfWheels = Int32.Parse(Console.ReadLine());
+                            Console.WriteLine("Enter number Of Wheels");
+                            int numberOfWheels = InputAsInteger(); //To get an input as a Integer
+                            while (numberOfWheels == -1)
+                            {
+                                Console.WriteLine("Input An Invalid Value");
+                                numberOfWheels = InputAsInteger();
+                            }
+
                             Console.WriteLine("Enter the type of motorcycle");
                             string typeOfMotorcycle = Console.ReadLine();
 
-                            vehicle = new Motorcycle(reg, Int32.Parse(gearLever), isAutomatic, color, numberOfWheels, typeOfMotorcycle);
+                            vehicle = new Motorcycle(reg, gearLever , isAutomatic, color, numberOfWheels, typeOfMotorcycle);
+                            g.ParkVehicle(vehicle);
 
 
 
                         }
-                        g.ParkVehicle(vehicle);
+                        else
+                        {
+                            Console.WriteLine("Please enter some valid input (1, 2, 3)");
+                        }
+                      
 
                         break;
                     case '4':
                         Console.WriteLine("Enter the registration number");
                         string regNumber = Console.ReadLine();
 
-                         g.UnParkVehicle(regNumber);
+                        g.UnParkVehicle(regNumber);
 
                         break;
                     case '5':
-
-                        Console.WriteLine("Enter the new maximum size");
-                        int newMaximumSize = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("Enter the maximun size");
+                        int newMaximumSize = InputAsInteger(); //To get an input as a Integer
+                        while (newMaximumSize == -1)
+                        {
+                            Console.WriteLine("Input An Invalid Value");
+                            newMaximumSize = InputAsInteger();
+                        };
                         g.SetSize(newMaximumSize);
                         break;
                     case '6':
@@ -138,10 +234,19 @@ namespace GarageProject1
                     case '7':
 
                         Console.WriteLine("Enter the size");
-                        int newSize = Int32.Parse(Console.ReadLine());
+                        int newSize = InputAsInteger(); //To get an input as a Integer
+                        while (newSize == -1)
+                        {
+                            Console.WriteLine("Input An Invalid Value");
+                            newSize = InputAsInteger();
+                        };
                         g.CreateGarage(newSize);
                         break;
 
+                    /*
+                     * Extend the menu to include the recursive 
+                     * and iterative exercises.
+                     */
                     case '0':
                         return;
                     default:
@@ -149,10 +254,6 @@ namespace GarageProject1
                         break;
                 }
             }
-
-        }
-
-
-            
+        } 
     }
 }
