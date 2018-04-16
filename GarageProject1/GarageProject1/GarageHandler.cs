@@ -9,12 +9,13 @@ namespace GarageProject1
     public class GarageHandler // we create the GarageHandler 
     {
         //Garage<Vehicle> vehicles;
+        public int size { get; set; }
         Garage<Vehicle> newvehicles;
 
-        public GarageHandler()
+        public GarageHandler(int size)
         {
 
-            newvehicles = new Garage<Vehicle>(20);
+            newvehicles = new Garage<Vehicle>(size);
           // newvehicles = new Garage<Vehicle>(40);
             //newvehicles.Park(new Car("eefgg", 4, "yes", "red", 4, "d"));
            // newvehicles.Park(new Car("dadadd", 5, "yes", "red", 4, "d"));
