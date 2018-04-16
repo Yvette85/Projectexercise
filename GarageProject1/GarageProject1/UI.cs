@@ -216,9 +216,13 @@ namespace GarageProject1
 
                         break;
                     case '5':
-
-                        Console.WriteLine("Enter the new maximum size");
-                        int newMaximumSize = Int32.Parse(Console.ReadLine());
+                        Console.WriteLine("Enter the maximun size");
+                        int newMaximumSize = InputAsInteger(); //To get an input as a Integer
+                        while (newMaximumSize == -1)
+                        {
+                            Console.WriteLine("Input An Invalid Value");
+                            newMaximumSize = InputAsInteger();
+                        };
                         g.SetSize(newMaximumSize);
                         break;
                     case '6':
@@ -230,7 +234,12 @@ namespace GarageProject1
                     case '7':
 
                         Console.WriteLine("Enter the size");
-                        int newSize = Int32.Parse(Console.ReadLine());
+                        int newSize = InputAsInteger(); //To get an input as a Integer
+                        while (newSize == -1)
+                        {
+                            Console.WriteLine("Input An Invalid Value");
+                            newSize = InputAsInteger();
+                        };
                         g.CreateGarage(newSize);
                         break;
 

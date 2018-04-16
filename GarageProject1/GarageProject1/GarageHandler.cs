@@ -76,6 +76,7 @@ namespace GarageProject1
             foreach (Vehicle v in newvehicles.Where(x => x.Color == color))
             {
                 if(v.GetType().Name == "Car")
+
                 countofCar++;
                 else if (v.GetType().Name == "Bus")
                     countofBus++;
