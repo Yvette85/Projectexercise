@@ -56,7 +56,7 @@ namespace GarageProject1
                         break;
                     case '2':
 
-                        g.ListParkedVehiclesType();
+                        g.ListParkedVehiclesType();//some thing
                         break;
                     case '3':
                         Vehicle vehicle = new Vehicle();
