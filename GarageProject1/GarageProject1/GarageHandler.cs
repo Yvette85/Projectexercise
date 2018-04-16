@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GarageProject1
 {
-    public class GarageHandler
+    public class GarageHandler // we create the GarageHandler 
     {
         //Garage<Vehicle> vehicles;
         Garage<Vehicle> newvehicles;

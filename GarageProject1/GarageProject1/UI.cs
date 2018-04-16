@@ -6,19 +6,13 @@ using System.Threading.Tasks;
 
 namespace GarageProject1
 {
-    class Program
+    public class UI
     {
 
+        GarageHandler g = new GarageHandler();
 
-
-        static void Main(string[] args)
+        public void MainMenu()
         {
-
-
-
-            UI ui = new UI();
-            ui.MainMenu();
-            /*
             bool keepRunning = true;
 
             while (keepRunning)
@@ -126,7 +120,7 @@ namespace GarageProject1
                         Console.WriteLine("Enter the registration number");
                         string regNumber = Console.ReadLine();
 
-                        // g.UnParkVehicle(vehicles, regNumber);
+                         g.UnParkVehicle(regNumber);
 
                         break;
                     case '5':
@@ -148,22 +142,17 @@ namespace GarageProject1
                         g.CreateGarage(newSize);
                         break;
 
-                   
                     case '0':
                         return;
                     default:
                         Console.WriteLine("Please enter some invalid input (0, 1, 2, 3, 4, 5, 6, 7)");
                         break;
-                } */
+                }
+            }
 
         }
+
+
+            
     }
 }
-
-
-
-
-
-
-
-           

@@ -17,7 +17,7 @@ namespace GarageProject1
             MotorcycleType = motorcycletype;
         }
 
-        public override void Print()
+        public override void Print() // we use the override method because , we need to use the proprties of the parent in the childrens
         {
             base.Print();
             Console.WriteLine($" Numberofwheels :{ NumberOfWheels} , MotorcycleType :{ MotorcycleType}");
