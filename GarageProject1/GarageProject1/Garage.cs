@@ -9,7 +9,7 @@ namespace GarageProject1
 {
     public class Garage<T> : IEnumerable<T> where T : Vehicle //collection of vehicles
     {
-        private T[] vehicles; //list of vehicles
+        private T[] vehicles; //array  of all vehicles
 
         public int MaxCapacity { get; set; }
         public int Count { get; set; }
@@ -50,6 +50,7 @@ namespace GarageProject1
            
                 for (int i = 0; i < Count; i++)
                 {
+                    if (vehicles[i] !=null)
                     if (vehicles[i].RegNumber == regNumber)
                     {
                     vehicles[i] = null;

@@ -81,7 +81,7 @@ namespace GarageProject1
                             int gearLever = InputAsInteger(); //To get an input as a Integer
                             while(gearLever == -1)
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 gearLever = InputAsInteger();
                             }
 
@@ -89,7 +89,7 @@ namespace GarageProject1
                             string isAutomatic = Console.ReadLine();
                             while (isAutomatic !="y" && isAutomatic != "n")
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 isAutomatic = Console.ReadLine();
                             }
 
@@ -100,7 +100,7 @@ namespace GarageProject1
                             int numberOfSeats = InputAsInteger(); //To get an input as a Integer
                             while (numberOfSeats == -1)
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 numberOfSeats = InputAsInteger();
                             }
 
@@ -110,7 +110,7 @@ namespace GarageProject1
                             string typeOfFuel = Console.ReadLine();
                             while (typeOfFuel != "d" && typeOfFuel != "b")
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 typeOfFuel = Console.ReadLine();
                             }
 
@@ -127,7 +127,7 @@ namespace GarageProject1
                             int gearLever = InputAsInteger(); //To get an input as a Integer
                             while (gearLever == -1)
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 gearLever = InputAsInteger();
                             }
 
@@ -136,7 +136,7 @@ namespace GarageProject1
                             string isAutomatic = Console.ReadLine();
                             while (isAutomatic != "y" && isAutomatic != "n")
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 isAutomatic = Console.ReadLine();
                             }
 
@@ -147,7 +147,7 @@ namespace GarageProject1
                             int busLength = InputAsInteger(); //To get an input as a Integer
                             while (busLength == -1)
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 busLength = InputAsInteger();
                             }
 
@@ -155,7 +155,7 @@ namespace GarageProject1
                             int numberOfWheels = InputAsInteger(); //To get an input as a Integer
                             while (numberOfWheels == -1)
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 numberOfWheels = InputAsInteger();
                             }
 
@@ -174,7 +174,7 @@ namespace GarageProject1
                             int gearLever = InputAsInteger(); //To get an input as a Integer
                             while (gearLever == -1)
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 gearLever = InputAsInteger();
                             }
 
@@ -183,7 +183,7 @@ namespace GarageProject1
                             string isAutomatic = Console.ReadLine();
                             while (isAutomatic != "y" && isAutomatic != "n")
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 isAutomatic = Console.ReadLine();
                             }
 
@@ -196,7 +196,7 @@ namespace GarageProject1
                             int numberOfWheels = InputAsInteger(); //To get an input as a Integer
                             while (numberOfWheels == -1)
                             {
-                                Console.WriteLine("Input An Invalid Value");
+                                Console.WriteLine(" You input an invalid Value");
                                 numberOfWheels = InputAsInteger();
                             }
 
@@ -228,7 +228,7 @@ namespace GarageProject1
                         int newMaximumSize = InputAsInteger(); //To get an input as a Integer
                         while (newMaximumSize == -1)
                         {
-                            Console.WriteLine("Input An Invalid Value");
+                            Console.WriteLine(" You input an invalid Value");
                             newMaximumSize = InputAsInteger();
                         };
                         g.SetSize(newMaximumSize);
@@ -245,7 +245,7 @@ namespace GarageProject1
                         int newSize = InputAsInteger(); //To get an input as a Integer
                         while (newSize == -1)
                         {
-                            Console.WriteLine("Input An Invalid Value");
+                            Console.WriteLine(" You input an invalid Value");
                             newSize = InputAsInteger();
                         };
                         g.CreateGarage(newSize);
@@ -255,7 +255,7 @@ namespace GarageProject1
                     case '0':
                         return;
                     default:
-                        Console.WriteLine("Please enter some invalid input (0, 1, 2, 3, 4, 5, 6, 7)");
+                        Console.WriteLine("Please enter some valid input (0, 1, 2, 3, 4, 5, 6, 7)");
                         break;
                 }
             }
