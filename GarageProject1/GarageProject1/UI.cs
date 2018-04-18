@@ -21,7 +21,7 @@ namespace GarageProject1
        {
             Console.WriteLine("Enter the size of the garage");
             int size = InputAsInteger(); //To get an input as a Integer
-            while (size == -1)
+          while (size == -1) // why we use the while loop : if you enter an invalid value, you will have the message that says invalid value until you type the valid value
             {
                 Console.WriteLine("Input An Invalid Value");
                 size = InputAsInteger();
@@ -34,7 +34,7 @@ namespace GarageProject1
                
                 
 
-                Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
+                Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 5, 6,7 ,0) of your choice"
                     + "\n1. List all parked vehicles"
 
                     + "\n2. List all vehicle types currently parked in the garage "
@@ -251,10 +251,7 @@ namespace GarageProject1
                         g.CreateGarage(newSize);
                         break;
 
-                    /*
-                     * Extend the menu to include the recursive 
-                     * and iterative exercises.
-                     */
+                   
                     case '0':
                         return;
                     default:

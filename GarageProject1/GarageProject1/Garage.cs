@@ -28,9 +28,9 @@ namespace GarageProject1
                 Count += 1;
             }
            
-            else
+            else 
             {
-                for (int i = 0; i < Count; i++)   
+                for (int i = 0; i < Count; i++)  // when you park a car and unpark it, it means there is an empty place, so we should check if there is an empty space in the garage , so we can park another car
                 {
                     if (vehicles[i] == null)
                     {
@@ -65,7 +65,7 @@ namespace GarageProject1
         {
             for (int i = 0; i < Count; i++)
             {
-                yield return vehicles[i]; // we use the yield , otherwise the program will crach
+                yield return vehicles[i]; // to have all the list of the vehicles parked in the garage, not just one. Because if we use return, the program will run once, this is why we used yield
             }
         }
 
