@@ -50,6 +50,7 @@ namespace GarageProject1
            
                 for (int i = 0; i < Count; i++)
                 {
+                    if(vehicles[i] != null)
                     if (vehicles[i].RegNumber == regNumber)
                     {
                     vehicles[i] = null;
