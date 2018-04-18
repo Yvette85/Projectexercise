@@ -74,17 +74,21 @@ namespace GarageProject1
             int countofCar = 0;
             int countofBus = 0;
             int countofMotorcycle = 0;
-            foreach (Vehicle v in newvehicles.Where(x => x.Color == color))
-            {
-                if(v.GetType().Name == "Car")
+           
+                foreach (Vehicle v in newvehicles.Where(x => x.Color == color))
+                {
+                    if (v.GetType().Name == "Car")
 
-                countofCar++;
-                else if (v.GetType().Name == "Bus")
-                    countofBus++;
-                else if (v.GetType().Name == "Motorcycle")
-                    countofMotorcycle++;
-                v.Print();
-            }
+                        countofCar++;
+                    else if (v.GetType().Name == "Bus")
+                        countofBus++;
+                    else if (v.GetType().Name == "Motorcycle")
+                        countofMotorcycle++;
+                    v.Print();
+                }
+
+           
+            
             Console.WriteLine("We have " + countofCar + " Cars which are " + color);
             Console.WriteLine("We have " + countofBus + " Bus which are " + color);
             Console.WriteLine("We have " + countofMotorcycle + " Motorcycles which are " + color);

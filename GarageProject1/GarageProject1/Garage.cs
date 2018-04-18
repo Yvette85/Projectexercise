@@ -66,6 +66,7 @@ namespace GarageProject1
         {
             for (int i = 0; i < Count; i++)
             {
+                if(vehicles[i] != null)
                 yield return vehicles[i]; // we use the yield , otherwise the program will crach
             }
         }

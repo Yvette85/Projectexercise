@@ -11,15 +11,25 @@ namespace GarageProject1
         public int InputAsInteger()
         {
             string str = Console.ReadLine();
-            bool  isInteger = Int32.TryParse(str, out int result);
-            if (isInteger)
-                return result;
-            else
+            if (str[0] == '-')
+            {
+       
                 return -1;
+            }
+            else
+            {
+                bool isInteger = Int32.TryParse(str, out int result);
+                if (isInteger)
+                    return result;
+                else
+                    return -1;
+            }
+            
+
         }
        public void MainMenu()
        {
-            Console.WriteLine("Enter the size of the garage");
+            Console.WriteLine("Set the size of the garage");
             int size = InputAsInteger(); //To get an input as a Integer
             while (size == -1)
             {
@@ -34,15 +44,15 @@ namespace GarageProject1
                
                 
 
-                Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3, 4, 5, 6, 7, 0) of your choice"
+                Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3, 4, 5, 6, 0) of your choice"
                     + "\n1. List all parked vehicles"
 
                     + "\n2. List all vehicle types currently parked in the garage "
                     + "\n3. Park Vehicles"
                     + "\n4. Unpark Vehicles "
-                    + "\n5. Set Size"
-                    + "\n6. Find vehicles by color"
-                    + "\n7.  Create a new Garage"
+                   
+                    + "\n5. Find vehicles by color"
+                    + "\n6.  Create a new Garage"
                     + "\n0. Exit the application");
 
                 char input = ' '; //Creates the character input to be used with the switch-case below.
@@ -223,23 +233,14 @@ namespace GarageProject1
                         g.UnParkVehicle(regNumber);
 
                         break;
+                    
                     case '5':
-                        Console.WriteLine("Enter the maximun size");
-                        int newMaximumSize = InputAsInteger(); //To get an input as a Integer
-                        while (newMaximumSize == -1)
-                        {
-                            Console.WriteLine("Input An Invalid Value");
-                            newMaximumSize = InputAsInteger();
-                        };
-                        g.SetSize(newMaximumSize);
-                        break;
-                    case '6':
                         Console.WriteLine("Enter color");
                         string s = Console.ReadLine();
                         g.FindVehicles(s);
 
                         break;
-                    case '7':
+                    case '6':
 
                         Console.WriteLine("Enter the size");
                         int newSize = InputAsInteger(); //To get an input as a Integer
@@ -258,7 +259,7 @@ namespace GarageProject1
                     case '0':
                         return;
                     default:
-                        Console.WriteLine("Please enter some invalid input (0, 1, 2, 3, 4, 5, 6, 7)");
+                        Console.WriteLine("Please enter some invalid input (0, 1, 2, 3, 4, 5, 6)");
                         break;
                 }
             }
