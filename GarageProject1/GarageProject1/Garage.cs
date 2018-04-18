@@ -48,7 +48,7 @@ namespace GarageProject1
         public void UnPark(string regNumber)
         {
            
-                for (int i = 0; i < Count; i++)
+                for (int i = 0; i < Count; i++)//some 
                 {
                     if (vehicles[i] !=null)
                     if (vehicles[i].RegNumber == regNumber)
@@ -64,8 +64,11 @@ namespace GarageProject1
 
         public IEnumerator<T> GetEnumerator()
         {
+            
             for (int i = 0; i < Count; i++)
             {
+                if (vehicles[i] != null)
+
                 yield return vehicles[i]; // to have all the list of the vehicles parked in the garage, not just one. Because if we use return, the program will run once, this is why we used yield
             }
         }

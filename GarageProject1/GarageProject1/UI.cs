@@ -40,9 +40,9 @@ namespace GarageProject1
                     + "\n2. List all vehicle types currently parked in the garage "
                     + "\n3. Park Vehicles"
                     + "\n4. Unpark Vehicles "
-                    + "\n5. Set Size"
-                    + "\n6. Find vehicles by color"
-                    + "\n7.  Create a new Garage"
+                  
+                    + "\n5. Find vehicles by color"
+                    + "\n6.  Create a new Garage"
                     + "\n0. Exit the application");
 
                 char input = ' '; //Creates the character input to be used with the switch-case below.
@@ -231,8 +231,7 @@ namespace GarageProject1
                             Console.WriteLine(" You input an invalid Value");
                             newMaximumSize = InputAsInteger();
                         };
-                        g.SetSize(newMaximumSize);
-                        break;
+                       
                     case '6':
                         Console.WriteLine("Enter color");
                         string s = Console.ReadLine();
