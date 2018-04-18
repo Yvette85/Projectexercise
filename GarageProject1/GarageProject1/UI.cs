@@ -223,22 +223,15 @@ namespace GarageProject1
                         g.UnParkVehicle(regNumber);
 
                         break;
-                    case '5':
-                        Console.WriteLine("Enter the maximun size");
-                        int newMaximumSize = InputAsInteger(); //To get an input as a Integer
-                        while (newMaximumSize == -1)
-                        {
-                            Console.WriteLine(" You input an invalid Value");
-                            newMaximumSize = InputAsInteger();
-                        };
+                   
                        
-                    case '6':
+                    case '5':
                         Console.WriteLine("Enter color");
                         string s = Console.ReadLine();
                         g.FindVehicles(s);
 
                         break;
-                    case '7':
+                    case '6':
 
                         Console.WriteLine("Enter the size");
                         int newSize = InputAsInteger(); //To get an input as a Integer
