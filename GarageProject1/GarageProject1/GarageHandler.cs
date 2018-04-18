@@ -54,9 +54,9 @@ namespace GarageProject1
             }
         }
 
-        public void ParkVehicle(Vehicle vehicle)
+        public void ParkVehicle(Vehicle v)
         {
-            newvehicles.Park(vehicle);
+            newvehicles.Park(v);
         }
 
         public void UnParkVehicle(string regNumber)
