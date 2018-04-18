@@ -34,7 +34,7 @@ namespace GarageProject1
                
                 
 
-                Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
+                Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3, 4, 5, 6, 7, 0) of your choice"
                     + "\n1. List all parked vehicles"
 
                     + "\n2. List all vehicle types currently parked in the garage "
